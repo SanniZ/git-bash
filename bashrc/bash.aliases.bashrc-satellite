@@ -1,0 +1,186 @@
+# bash.alias.bashrc
+
+export LANG=zh_CN.utf-8
+
+# =============================================
+# PATHS
+# =============================================
+_PROGRAM="C:/Program\ Files"
+_GIT="$_PROGRAM/Git"  # root of git-bash
+_NPP="$_PROGRAM/Notepad++/notepad++.exe"  # notepad++
+_PTY="$_PROGRAM/PuTTY/putty.exe"  # putty
+#
+_BYNG="D:/Byng"
+_BY_MARS="D:/ByMars"
+_LINUX2WIN="D:/linux2win"
+_WORKSPACE="$_LINUX2WIN"
+_BW="$_BY_MARS/Basewin"
+_TS="$_BY_MARS/Thundersoft"
+_MYGITS="$_WORKSPACE/mygits"
+_MYPY="$_MYGITS/mypy"
+_MYSH="$_MYGITS/mysh"
+_GITBASH="$_MYGITS/git-bash"
+_GITBASH_MYPY="$_GITBASH/mypy"
+_GITBASH_MYSH="$_GITBASH/mysh"
+_PYTINYALSA="$_MYPY/tinyalsa"
+#
+_MC="$_BYMARS/Morningcore"
+_G_MYSH="$_GITBASH/mysh"
+_G_MYPY="$_GITBASH/mypy"
+
+
+
+# =============================================
+# alias for apps
+# =============================================
+alias npp="$_NPP"
+alias pty="$_PTY"
+alias vbrc="npp /etc/bash.bashrc"  # edit bash.bashrc
+alias sbrc=". /etc/bash.bashrc"  # source bash.bashrc
+alias vbarc="npp /etc/bash.aliases.bashrc"  # edit bash.aliases.bashrc
+alias vvim="npp /etc/vimrc"
+alias py="python"
+alias pytinymix="python $_PYTINYALSA/tinymix.py"
+alias pytinycap="python $_PYTINYALSA/tinycap.py"
+alias pytinywidget="python $_PYTINYALSA/tinywidget.py"
+alias cpyc="find . -name __pycache__ | xargs rm -rf"
+alias clr="clear"
+
+
+# =============================================
+# alias for change path
+# =============================================
+alias cdb="cd -"
+alias cdu="cd .."
+alias ll="ls -l"
+alias cdc="cd C:"
+alias cdd="cd D:"
+alias cde="cd E:"
+alias cdf="cd F:"
+alias cdz="cd Z:"
+alias cdy="cd Y:"
+alias cdx="cd X:"
+alias cby="cd $_BYNG"
+alias cbw="cd $_BW"
+alias cts="cd $_TS"
+alias clw="cd $_LINUX2WIN"
+alias cgit="cd $_MYGITS"
+alias cws="cd $_WORKSPACE"
+alias cpy="cd $_MYPY"
+alias csh="cd $_MYSH"
+alias cpytinyalas="cd $_PYTINYALSA"
+alias cta="cpytinyalas"
+alias cpytinywidget="cd $_PYTINYALSA/widgets"
+alias ctw="cpytinywidget"
+alias cbymars="cd $_BY_MARS"
+alias cmars="cbymars"
+#
+alias cmc="cd $_MC"
+# alias cpriv="cd $_BYNG/PrivInfo"
+alias cgsh="cd $_G_MYSH"
+alias cgpy
+="cd $_G_MYPY"
+# alias cmt="cd $_MCTIMES"
+# alias cmn="cd $_MCNOTES"
+# alias con="cd $_MCNOTES/OfficeNotes"
+# alias cwn="cd $_MCNOTES/WorkNotes"
+# alias ctn="cd $_TECHNOTES"
+# alias cfav="cd $_FAV"
+# alias cprj="cd $_PRODOCS"
+# alias cpj="cprj"
+# alias cdocs="cd $_MCDOCS"
+
+
+# =============================================
+# alias for git
+# =============================================
+alias gst="git status"
+alias gl="git log "
+alias glg="git log --graph --decorate --all"
+alias gls="git log --stat"
+alias gla="git log --graph --pretty=oneline --decorate --all"
+alias gln="git log --name-only"
+alias gsw="git show"
+alias gsp="git show -p"
+alias grh="git reset --hard"
+alias grhh="git reset --hard HEAD~"
+alias gfp="git format-patch"
+alias gfph="git format-patch HEAD~"
+alias gco="git checkout"
+alias gdf="git diff"
+alias ga="git add"
+alias gaa="git add ."
+alias gbr="git branch"
+alias gbra="git branch -a"
+alias gcm="git commit -m"
+alias gca="git commit --amend"
+#
+GITS="$_MYGITS/mypy,$_MYGITS/mysh,$_MYGITS/essentials,$_MYGITS/linux-env-setup,$_MYGITS/technotes,$_MCSH,$_MCPY"
+alias gitsh="bash $_GITBASH_MYSH/git/git.sh"
+alias gitcmc="gitsh -c $GITS"
+alias gitc="gitcmc"
+alias treesh="bash $_GITBASH_MYSH/linux/tree.sh"
+alias tree="treesh"
+alias treels="tree -L 1"
+alias treex="tree.exe"
+
+
+# =============================================
+# alias for adb
+# =============================================.
+_UDNAME="80B6-586E"
+_ADB_PATH=
+alias adbsh="source $_MYSH/android/adb.sh"
+alias apwd="adbsh pwd"
+alias apd="apwd"
+alias acd="adbsh cd"
+alias apush="adbsh push"
+alias apull="adbsh pull"
+alias arm="adbsh rm"
+alias amkdir="adbsh mkdir"
+alias amk="amkdir"
+alias alist="adbsh ls"
+alias als="alist"
+alias allist="adbsh ll"
+alias all="allist"
+alias amv="adbsh mv"
+alias acstorage="adbsh cd /storage"
+alias acst="acstorage"
+alias alsstorage="acstorage && als"
+alias alsst="alstorage"
+alias allstorage="acstorage && all"
+alias allst="allstorage"
+alias acudisk="adbsh cd /storage/$_UDNAME"
+alias acud="acudisk"
+alias alsudisk="acudisk && als"
+alias alsud="alsudisk"
+alias alludisk="acudisk && all"
+alias allud="alludisk"
+
+
+# =============================================
+# alias for android
+# =============================================
+alias await="adb wait-for-devices"
+alias awdev="await"
+alias adevice="adb devices"
+alias adev="adevice"
+alias aroot="adb root"
+alias art="aroot"
+alias ashell="adb shell"
+alias ash=ashell""
+alias amixer="adb shell tinymix"
+alias acap="adb shell tinycap"
+alias aplay="adb shell tinyplay"
+alias areboot="adb reboot"
+alias arebloader="adb reboot bootloader"
+alias freboot="fastboot reboot"
+alias fkernel="fastboot flash kernel kernel"
+alias fkernelimage="fastboot flash kernel Image"
+alias dmesg="adb shell dmesg"
+alias kmsg="adb shell cat proc/kmsg"
+alias tinymix="adb shell tinymix"
+alias tinycap="adb shell tinycap"
+alias tinyplay="adb shell tinyplay"
+
+#
